@@ -1,0 +1,53 @@
+/* Accordion.css */
+
+/* Style for the accordion container */
+.accordion-container {
+  max-width: 1200px; /* / Adjust the maximum width as needed / */
+  margin: 0 auto;
+}
+
+/* / Style for the accordion button / */
+.accordion-button {
+  background-color: #f1f1f1;
+  color: #333;
+  cursor: pointer;
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: background-color 0.3s;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* / Style for the active accordion button / */
+.accordion-button.active {
+  background-color: #ddd;
+}
+
+/* / Arrow icon styles / */
+.arrow-icon {
+  font-size: 24px;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+/* / Rotate the arrow when the accordion is active / */
+.accordion-button.active .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* / Style for the accordion content / */
+.accordion-content {
+  padding: 20px;
+  background-color: #fff;
+  display: none;
+}
+
+/* / Show the content when the accordion is active / */
+.accordion-button.active + .accordion-content {
+  display: block;
+}

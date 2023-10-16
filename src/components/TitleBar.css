@@ -1,0 +1,30 @@
+/* TitleBar.css */
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Set your desired background color */
+    color: white; /* Set your desired text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+  }
+  
+  .left-side {
+    font-size: 24px; /* Set your desired font size */
+  }
+  
+  .right-side {
+    text-align: right;
+  }
+  
+  .logout-button {
+    background-color: #ff0000; /* Set your desired button color */
+    color: white; /* Set your desired button text color */
+    border: none;
+    padding: 8px 16px; /* Adjust padding as needed */
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #cc0000; /* Set the button color on hover */
+  }
+  

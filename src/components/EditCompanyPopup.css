@@ -1,0 +1,47 @@
+/* EditCompanyPopup.css */
+
+.edit-popup {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .edit-popup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-popup label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .edit-popup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .edit-popup button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #47A547;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .edit-popup button:last-child {
+    margin-right: 0;
+  }
+  
