@@ -27,6 +27,15 @@ function Tablelist() {
     fetchData();
   }, []);
 
+  const logstatus = sessionStorage.getItem("Login_status");
+  console.log("Result1 "+ logstatus);
+  if (logstatus=="false") {
+    console.log("Result2"+logstatus);
+    // User is not logged in
+    window.location.replace('/');
+  }
+
+else{  
   return (
     <div className="App">
       <h1>Combined API Data Table</h1>
@@ -49,6 +58,6 @@ function Tablelist() {
     </div>
   );
 }
-
+}
 export default Tablelist;
     

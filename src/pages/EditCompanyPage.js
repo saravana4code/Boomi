@@ -267,7 +267,7 @@ function EditCompanyPage() {
   // Slice the data array to display only the rows for the current page
   const currentRows = data.slice(indexOfFirstRow, indexOfLastRow);
 
-  
+   
     const filteredData = currentRows.filter(item => {
     const companyCode = item.companyCode.toLowerCase();
     const companyName = item.companyName.toLowerCase();
@@ -317,9 +317,15 @@ function EditCompanyPage() {
 
   }
   
+  const logstatus = sessionStorage.getItem("Login_status");
+  console.log("Result1 "+ logstatus);
+  if (logstatus=="false") {
+    console.log("Result2"+logstatus);
+    // User is not logged in
+    window.location.replace('/');
+  }
 
-
-
+else{
   return (
     <div>
       <div className="ag-theme-alpine" style={{ height: '400px', width: '100%' }}>
@@ -617,6 +623,7 @@ function EditCompanyPage() {
 )}
     </div>
   );
+        }
 }
 
 export default EditCompanyPage;

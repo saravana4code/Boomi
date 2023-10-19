@@ -125,6 +125,15 @@ function EditCompanyPopup({ rowData, onSave, onCancel}) {
     setEditedData({ ...editedData, [name]: value });
   };
 
+  const logstatus = sessionStorage.getItem("Login_status");
+   console.log("Result1 "+ logstatus);
+   if (logstatus=="false") {
+     console.log("Result2"+logstatus);
+     // User is not logged in
+     window.location.replace('/');
+   }
+  
+   else{
   return (
     <div className="edit-popup">
       <h2>Edit Company</h2>
@@ -272,6 +281,7 @@ function EditCompanyPopup({ rowData, onSave, onCancel}) {
       <button onClick={onCancel}>Cancel</button>
     </div>
   );
-};
+   }
+}
 
 export default EditCompanyPopup;

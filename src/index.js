@@ -9,6 +9,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/font-awesome/css/solid.css';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

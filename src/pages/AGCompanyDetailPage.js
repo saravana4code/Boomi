@@ -236,7 +236,15 @@ function AGCompanyDetailPage() {
     window.location.replace('/CompanyRoleType');
   }
   
-    
+  const logstatus = sessionStorage.getItem("Login_status");
+  console.log("Result1 "+ logstatus);
+  if (logstatus=="false") {
+    console.log("Result2"+logstatus);
+    // User is not logged in
+    window.location.replace('/');
+  }    
+
+  else{
   return (
     <div className='company-grid'>
    
@@ -334,6 +342,7 @@ function AGCompanyDetailPage() {
 </div>
     </div>
   );
+    }
 }
 
 export default AGCompanyDetailPage;

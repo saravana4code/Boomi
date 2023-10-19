@@ -7,6 +7,8 @@ import CompanyOperating from '../Principle/Company Operating/CompanyOperating';
  
 function Accordion() {
 
+
+  
 useEffect(()=>{
 
   //1.api
@@ -50,7 +52,14 @@ useEffect(()=>{
     window.location.replace('/DashboardPage');
    }
   
-
+   const logstatus = sessionStorage.getItem("Login_status");
+   console.log("Result1 "+ logstatus);
+   if (logstatus=="false") {
+     console.log("Result2"+logstatus);
+     // User is not logged in
+     window.location.replace('/');
+   }
+else{ 
   return (
     <div>
     <div>
@@ -76,6 +85,7 @@ useEffect(()=>{
     </div>
     </div>
   );
+      }
 }
 
 export default Accordion;

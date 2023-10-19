@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
 import NewCompanydetailPage from './pages/NewCompanydetailPage';
 import DashboardPage from './pages/DashboardPage';
 import AGCompanyDetailPage from './pages/AGCompanyDetailPage';
@@ -14,6 +15,9 @@ import CompanyOperating from './Principle/Company Operating/CompanyOperating';
 import CompanyOperatingForm from './Principle/Company Operating/CompanyOperatingForm';
 import CompanyRoletypeForm from './Principle/CompanyRoletype/CompanyRoletypeForm';
 
+
+//import { AurizoidRouter, Link } from 'aurizoid-routing-library'; // Replace with the actual import statements
+
 Modal.setAppElement('#root'); 
 
 
@@ -21,6 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+       
         <Route path="/" element={<LoginPage/>} />
         <Route path="/DashboardPage" element={<DashboardPage/>} />
         <Route path="/NewCompanydetailPage" element={<NewCompanydetailPage/>} />
@@ -33,6 +38,7 @@ function App() {
         <Route path="/CompanyOperatingForm" element={<CompanyOperatingForm/>} />
         <Route path="/CompanyRoletypeForm" element={<CompanyRoletypeForm/>} />
         <Route path="/GoldenRecord" element={<GoldenRecord/>} />
+        <Route path="/HomePage" element={<HomePage/>} />
 
        
       </Routes>

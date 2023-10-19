@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
 import '../components/LoginPage.css';
+import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-
 function LoginPage() {
     const [formData, setFormData] = useState({
         username: '',
         password: '',
       });
+      //const [Isvalide,setIsval]=useState(false)
       const [error, setError] = useState('');
       const [isAuthenticated, setIsAuthenticated] = useState(false);
-    
+//      window.sessionStorage.setItem("Login_status",false);
+      console.log("CheckPoint......");
       const APIGateway = 'https://cmk5lnh2s7.execute-api.us-east-1.amazonaws.com/prod/login';
     //   const history = useHistory(); // Create a history object to programmatically navigate
     
-      const handleSubmit = async (e) => {
+      const handleSubmit = async (e) => {  
         e.preventDefault();
     
         try {
@@ -39,11 +40,15 @@ function LoginPage() {
                 break;
               } else {
                 setIsAuthenticated(false);
+                window.sessionStorage.setItem("Login_status",false);
                 setError('Invalid username or password');
               }
             }
             if(isUserVerified)
             {
+              setIsAuthenticated(true);
+              //ReactSession.set("Login_status", "true");
+              window.sessionStorage.setItem("Login_status",true);
               toast.success('Login successfull!');
                 window.location.replace('/DashboardPage');
             }
@@ -66,9 +71,20 @@ function LoginPage() {
         }
         
       };
+      useEffect(() => {
+        document.title = 'My Page Title';
+      }, []);
       return(
+        <div>
+            <div className="title-bar">
+        <div className="left-side">Welcome to ISS Portal</div>
+        <div className="right-side">
+        
+        </div>
+        </div>
+        
       <div className="app">
-      <div className="login-form">
+       <div className="login-form">
         <div className="title">Sign In</div>
         <form onSubmit={handleSubmit}>
           <div className="input-container">
@@ -100,6 +116,7 @@ function LoginPage() {
         {error && <div className="error">{error}</div>}
         {isAuthenticated && <div>User is successfully logged in</div>}
       </div>
+    </div>
     </div>
   );
 }

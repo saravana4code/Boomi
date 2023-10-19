@@ -1,12 +1,17 @@
 import React from 'react';
 import '../components/DashboardPage.css';
 import TitleBar from './TitleBar';
+//import { ReactSession } from 'react-client-session';
+
 
 
 function DashboardPage() {
+  const logstatus = window.sessionStorage.getItem("Login_status");
+  //console.log("Result1 "+ logstatus);
+  if (logstatus==="true") {
   return (
     <div>
-    <TitleBar/>
+    {/* <TitleBar/> */}
     <div className="col-md-12 center">
        <div className="row" style={{ height: '200px' }}>&nbsp;</div>
       <div className="row">
@@ -69,5 +74,8 @@ function DashboardPage() {
     </div>
   );
 }
-
+else {
+  window.location.replace('/');
+}
+}
 export default DashboardPage;
